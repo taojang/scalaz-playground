@@ -1,0 +1,28 @@
+== scalaz-playground
+
+=== Purpose
+
+To practice and demostrate what can be done better with Scalaz
+
+
+=== License
+
+This will be licensed under the BSD 3-clause license. See link:LICENSE[].
+
+=== Prerequisites
+
+1. Java 8
+2. Scala 2.11.7
+3. SBT 0.13.0+
+
+=== Getting Started
+
+Inside the root directory of the repository:
+
+1. Launch SBT:
+
+        $ sbt
+
+2. Compile everything and run examples you want to see:
+
+        > run
