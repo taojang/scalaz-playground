@@ -5,6 +5,10 @@ import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration.Duration
 import scala.util.Success
 
+/**
+  * naive logging in future often generates interleaving entries
+  * this code demostrate the issue
+  */
 object Problem extends App {
 
   def step(id: String)(i: Int): Future[Int] = Future {

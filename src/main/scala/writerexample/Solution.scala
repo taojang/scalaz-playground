@@ -8,6 +8,16 @@ import scalaz.std.list._
 import scalaz.std.scalaFuture._
 import scalaz.syntax.traverse._
 
+/**
+  * solution using scalaz is to simply use `WriterT`
+  * the computation still happens in parallel,
+  * but the result is a `Tuple2`, the first element
+  * is aggregated log, second element is the computed result
+  *
+  * `WriterT` is a monad when the first type param is a monad
+  * so for comprehension could be used to write
+  * easy understandable and nearly imperative code
+  */
 object Solution extends App {
 
   type AsyncLogged[A] = WriterT[Future, List[String], A]
