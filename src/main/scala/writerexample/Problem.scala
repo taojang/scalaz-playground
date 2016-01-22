@@ -1,8 +1,8 @@
 package writerexample
 
-import scala.concurrent.duration.Duration
 import scala.concurrent.{Await, ExecutionContext, Future}
 import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.duration.Duration
 import scala.util.Success
 
 object Problem extends App {
@@ -17,7 +17,7 @@ object Problem extends App {
     println("starting complex job!")
     val steps = (0 to 30).toList map { i => step("complex job")(i) }
     Future.sequence(steps).andThen {
-      case Success(l) => println(s"complex job finished with $l")
+      case Success(results) => println(s"complex job finished with $results")
     }
   }
 
@@ -25,7 +25,7 @@ object Problem extends App {
     println("starting simple job!")
     val steps = (0 to 15).toList map { i => step("simple job")(i) }
     Future.sequence(steps).andThen {
-      case Success(l) => println(s"simple job finished with $l")
+      case Success(results) => println(s"simple job finished with $results")
     }
   }
 
