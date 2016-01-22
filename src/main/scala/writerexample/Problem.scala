@@ -25,7 +25,7 @@ object Problem extends App {
     println("starting simple job!")
     val steps = (0 to 15).toList map { i => step("simple job")(i) }
     Future.sequence(steps).andThen {
-      case Success(l) => println(s"complex job finished with $l")
+      case Success(l) => println(s"simple job finished with $l")
     }
   }
 
